@@ -1,0 +1,1 @@
+conn_client = {}                # dictionnaire des connexions clients
