@@ -8,6 +8,7 @@ class TileServer :
 
 	def __init__(self) :
 		self._tile = FREE
+		self._charactere = None
 
 	def isTileFree(self) :
 		return self._tile == FREE
@@ -21,6 +22,9 @@ class TileServer :
 	def isTileTaken(self) :
 		return self._tile == TAKEN
 
+	def getCharactere(self) : 
+		return self._charactere
+
 	def setTileFree(self) : 
 		self._tile = FREE
 
@@ -30,8 +34,9 @@ class TileServer :
 	def setTileBloc(self) :
 		self._tile = BLOC
 
-	def setTileTaken(self) :
+	def setTileTaken(self, c) :
 		self._tile = TAKEN
+		self._charactere = c
 
 	def __str__(self) :
 		if(self.isTileFree()) :
