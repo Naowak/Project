@@ -6,20 +6,23 @@ class Capacity :
 		self._portee = nb
 		self._ldv = boolean
 
-	def doCapacity(self, *arg) :
-		self._fct(arg)
+	def doCapacity(self, **arg) : #demande un dict
+		self._fct(**arg)
 
-	def getPortee() :
+	def getPortee(self) :
 		return self._portee
 
-	def getLdv() :
+	def getLdv(self) :
 		return self._ldv
 
-	def setPortee(nb) :
+	def setPortee(self, nb) :
 		self._portee = nb
 
-	def setLdv(boolean) :
+	def setLdv(self, boolean) :
 		self._ldv = boolean
 
-	def clone() :
+	def clone(self) :
 		return Capacity(self._fct, self._portee, self._ldv)
+
+	def __str__(self) :
+		return str(self._fct) + " " + str(self._portee) + " " + str(self._ldv)

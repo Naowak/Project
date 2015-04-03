@@ -3,17 +3,22 @@ import CapacityList
 class Character :
 	"""Class which define a character on the Server side"""
 
-	def __init__(self) :
+	def __init__(self, name) :
+		self._name = name
 		self._lifePointMax = None
-		self._lifePoint = self.lifePoint
+		self._lifePoint = self._lifePointMax
 		self._manaMax = None
 		self._mana = self._manaMax
 		self._speedMax = None
 		self._speed = self._speedMax
 		self._capacity = CapacityList.CapacityList() 
 
-	def clone(self) :
-		c = Character()
+	def __str__(self) :
+		return "< " +  self.getName() + " > : LPM : " + str(self.getLifePointMax()) + ", LP : " + str(self.getLifePoint()) + ", mM : " + str(self.getManaMax()) + ", m : " \
+		+ str(self.getMana()) + ", SM : " + str(self.getSpeedMax()) + ", S : " + str(self.getSpeed()) + ", CL : " + str(self.getCapacity())
+
+	def clone(self, name) :
+		c = Character(name)
 		c.setLifePointMax(self._lifePointMax)
 		c.setLifePoint(self._lifePoint)
 		c.setManaMax(self._manaMax)
@@ -21,6 +26,10 @@ class Character :
 		c.setSpeedMax(self._speedMax)
 		c.setSpeed(self._speed)
 		c.setCapacityList(self._capacity)
+		return c
+
+	def getName(self) :
+		return self._name
 	
 	def setCapacityList(self, capacityList) :
 		self._capacity = capacityList.clone()
