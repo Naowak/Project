@@ -1,8 +1,9 @@
 import TileServer
 import random
+import Coord
 
-MAP_SIDE_X = 50
-MAP_SIDE_Y = 50
+MAP_SIDE_X = 5
+MAP_SIDE_Y = 5
 
 class MapServer:
 	"""Class which define the map on the Server side"""
@@ -28,6 +29,37 @@ class MapServer:
 				str += self._tab[j][i].__str__()
 			str += "\n"
 		return str
+
+	def getTile(self, coord) :
+		return self._tab[coord.getY()][coord.getX()]
+
+	def isTileFree(self, coord) :
+		return self.getTile(coord).isTileFree()
+
+	def isTileHole(self, coord) :
+		return self.getTile(coord).isTileHole()
+
+	def isTileBloc(self, coord) :
+		return self.getTile(coord).isTileBloc()
+
+	def isTileTaken(self, coord) :
+		return self.getTile(coord).isTileTaken()
+
+	def getCharacter(self, coord) :
+		return self.getTile(coord).getCharacter()
+
+	def setTileFree(self, coord) :
+		self.getTile(coord).setTileFree()
+
+	def setTileHole(self, coord) :
+		self.getTile(coord).setTileHole()
+
+	def setTileBloc(self, coord) :
+		self.getTile(coord).setTileBloc()
+
+	def setTileTaken(self, coord, c) :
+		self.getTile(coord).setTileTaken(c)
+
 
 
 				

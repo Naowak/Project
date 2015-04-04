@@ -22,7 +22,7 @@ class TileServer :
 	def isTileTaken(self) :
 		return self._tile == TAKEN
 
-	def getCharactere(self) : 
+	def getCharacter(self) : 
 		return self._character
 
 	def setTileFree(self) : 
@@ -36,7 +36,7 @@ class TileServer :
 
 	def setTileTaken(self, c) :
 		self._tile = TAKEN
-		self._charactere = c
+		self._character = c
 
 	def __str__(self) :
 		if(self.isTileFree()) :
