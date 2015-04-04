@@ -9,3 +9,4 @@ Faire tout de même attention : l'encapsulation des données n'est pas respecté
 Ce qu'il reste à faire :
 	- Il faut ajouter les module Heros, Minion
 	- Peut être faudra t'il aussi ajouter les modules de classes. Mais ce n'est pas encore le moment. Surtout que nous n'avons pas encore l'idée de quelle classes nous allons créer.
+	- Il faut aussi ajouter aux Characters leur localisation
