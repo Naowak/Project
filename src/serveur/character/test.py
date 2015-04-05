@@ -1,6 +1,11 @@
+import sys
+path = "../mapping/"
+sys.path.append(path)
+import MapServer
 import Capacity
 import CapacityList
 import Character
+from mapping import Coord
 
 def fct(**arg) :
 	print("lol\n")
@@ -39,6 +44,10 @@ jean.removeCapacity(q)
 print(jean)
 
 herve.setCapacityList(y)
+print(herve)
+
+coord = Coord.Coord(2, 5)
+herve.setLoc(coord)
 print(herve)
 
 

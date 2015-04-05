@@ -24,6 +24,13 @@ class CapacityList :
 			cl.capacityAppend(elem.clone()) #Attention, la capacité est cloné, ce n'est pas la même référence !
 		return cl
 
+	def doCapacity(self, name, coord) :
+		for elem in self._list :
+			if elem.getName() == name :
+				elem.doCapacity(coord)
+				break
+
+
 	def __str__(self) :
 		string = ''
 		for elem in self._list :

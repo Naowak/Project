@@ -1,4 +1,8 @@
+import sys
+path = "../"
+sys.path.append(path)
 import CapacityList
+import mapping.Coord
 
 class Character :
 	"""Class which define a character on the Server side"""
@@ -12,10 +16,11 @@ class Character :
 		self._speedMax = None
 		self._speed = self._speedMax
 		self._capacity = CapacityList.CapacityList() 
+		self._loc = None
 
 	def __str__(self) :
 		return "< " +  self.getName() + " > : LPM : " + str(self.getLifePointMax()) + ", LP : " + str(self.getLifePoint()) + ", mM : " + str(self.getManaMax()) + ", m : " \
-		+ str(self.getMana()) + ", SM : " + str(self.getSpeedMax()) + ", S : " + str(self.getSpeed()) + ", CL : " + str(self.getCapacity())
+		+ str(self.getMana()) + ", SM : " + str(self.getSpeedMax()) + ", S : " + str(self.getSpeed()) + ", CL : " + str(self.getCapacity()) + ", LOC : " + str(self.getLoc())
 
 	def clone(self, name) :
 		c = Character(name)
@@ -27,6 +32,12 @@ class Character :
 		c.setSpeed(self._speed)
 		c.setCapacityList(self._capacity)
 		return c
+
+	def getLoc(self) :
+		return self._loc
+
+	def setLoc(self, coord) :
+		self._loc = coord
 
 	def getName(self) :
 		return self._name
@@ -78,3 +89,6 @@ class Character :
 
 	def removeCapacity(self, capacity) :
 		self._capacity.capacityRemove(capacity)
+
+	def doCapacity(self, name, coord) :
+		self._capacity.doCapacity(name, coord)

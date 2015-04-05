@@ -1,6 +1,9 @@
 # Project
 ---------
 
-- Il faut gérer la gestion des Packages (notamment le fait d'aller dans un package plus haut dans la hierarchie)
 - Il faudra créer un package pour les mouvements, les lignes de vue etc etc
+- Il va falloir entamer l'interface graphique (pour l'instant bidon) :
+	- Ce que l'on veut pouvoir faire :
+		- Afficher la map et les personnages
+		- Cliquer sur une capacité et sur la case sur laquelle on souhaite la jouer
 
